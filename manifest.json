@@ -1,0 +1,19 @@
+{
+  "name": "Mazii User Blocker",
+  "description": "Block user on mazii",
+  "version": "1.0",
+  "permissions": ["storage", "activeTab", "scripting"],
+  "manifest_version": 3,
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "run_at": "document_end",
+      "matches": ["*://*.mazii.net/*", "*://mazii.net/*"],
+      "js": [
+        "content.js"
+      ]
+    }
+  ]
+}
